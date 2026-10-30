@@ -145,6 +145,23 @@ I built the code in this repository in this [YouTube video](https://www.youtube.
 - rename GPT4Tokenizer to GPTTokenizer and support GPT-2/GPT-3/GPT-3.5 as well?
 - write a LlamaTokenizer similar to GPT4Tokenizer (i.e. attempt sentencepiece equivalent)
 
+## My Changes in This Fork
+
+Fork maintained by [Muhammad Ahmad Farooq](https://github.com/muhammadahmad758), a BS Artificial Intelligence student learning how LLMs work from scratch. Original project by Andrej Karpathy (MIT License — see below).
+
+**What I added:**
+
+- `examples/roman_urdu_demo.py` — a small demo that trains the `BasicTokenizer` on a Roman Urdu paragraph (Urdu written in Latin letters, as most people in Pakistan type it) and on the same meaning in English, then compares the two:
+  - shows tokens the tokenizer learns from Roman Urdu text (chunks like `'hai'` and `'aur '` become single tokens),
+  - counts tokens for each version (in my run: Roman Urdu 231 tokens, English 219 tokens, for the same meaning),
+  - and checks the round-trip property `decode(encode(x)) == x` for both texts.
+
+Run it (after `pip install -r requirements.txt`):
+
+```
+python examples/roman_urdu_demo.py
+```
+
 ## License
 
 MIT
